@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta name="renderer" content="webkit">
+<meta name="WT.page_name" content="index">
+<meta content="zh-cn" http-equiv="content-language">
+<meta name="SmartView_Page" content="1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta http-equiv="Cache-Control" content="no-transform ">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="mobile-agent" content="format=xhtml; url=//m.leadfund.com.cn/html/pubFund/index.html">
+<meta name="mobile-agent" content="format=html5; url=//m.leadfund.com.cn/html/pubFund/index.html">
+<!--TDK-->
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta content="本页版权归利得金融所有. all rights reserved" name="copyright">
+<title>利得机构</title>
+<!--通知搜索引擎指定权威页面-->
+<link rel="canonical" href="http://www.leadfund.com.cn/">
+</head>
+<body :controller="leadbank">
+<!--<div :html="@header" class="header"></div>-->
+<xmp :widget="{is:'ms-header'}">
+    <div slot="content">这是子视图的内容</div>
+</xmp>
+<p :text="@currPath"></p>
+<div :html="@currPage" class="main"></div>
+<p><a href='#!/404'>404页面</a></p>
+<p><a href='#!/ucenter/index'>个人中心</a></p>
+<div :html="@footer" class="footer"></div>
+<!--js-->
+<script src="build/jquery.js"></script>
+</body>
+</html>
