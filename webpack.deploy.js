@@ -6,21 +6,16 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var TransferWebpackPlugin = require('transfer-webpack-plugin');
 // var assetsPath = '/';
 // console.log(process.env.DEV_ENV.replace(/\s/g,"") === 'test');
-var assetsPath = process.env.DEV_ENV.replace(/\s/g,"") === 'test' ? 'https://test.leadbank.com/' : 'https://leadbank.com/';
+var assetsPath = process.env.DEV_ENV.replace(/\s/g,"") === 'test' ? '' : '';
 console.log(assetsPath);
 var config = {
 	cache: true,
 	entry: {
-		app: path.resolve(__dirname, 'src/index.js'),
-		shared: [
-			'avalon2',
-			'assets/router/mmHistory',
-			'assets/router/storage',
-			'assets/router/mmRouter'
-		]
+		app: path.resolve(__dirname, 'src/index.js')
 	},
 	externals: {
-		jquery: 'window.$'
+		jquery: 'window.$',
+		avalon: 'window.avalon'
 	},
 	output: {
 		path: path.join(__dirname, '/dist/'),
@@ -53,7 +48,14 @@ var config = {
 		}, {
 			test: /\.(woff2?|otf|eot|ttf)$/i,
 			loader: 'url?name=fonts/[name].[hash:4].[ext]'
-		}]
+		}, {
+            test: /.js$/,
+            enforce: 'post', // post-loader处理
+            loader: 'es3ify-loader',
+			query: {
+                  presets: ['es2015-loose']
+            }
+        }]
 	},
 	imagemin: {
 		gifsicle: {

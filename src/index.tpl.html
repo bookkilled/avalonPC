@@ -20,16 +20,11 @@
 <link rel="canonical" href="http://www.leadfund.com.cn/">
 </head>
 <body :controller="leadbank">
-<!--<div :html="@header" class="header"></div>-->
-<xmp :widget="{is:'ms-header'}">
-    <div slot="content">这是子视图的内容</div>
-</xmp>
-<p :text="@currPath"></p>
-<div :html="@currPage" class="main"></div>
-<p><a href='#!/404'>404页面</a></p>
-<p><a href='#!/ucenter/index'>个人中心</a></p>
-<div :html="@footer" class="footer"></div>
+    <xmp :widget="{is:'ms-header'}"></xmp>
+    <div :html="@currPage" class="main"></div>
+    <xmp :widget="{is:'ms-footer'}"></xmp>
 <!--js-->
+<script src="build/avalon.js"></script>
 <script src="build/jquery.js"></script>
 </body>
 </html>

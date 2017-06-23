@@ -9,6 +9,10 @@ module.exports = {
 		'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true',
 		path.resolve(__dirname, 'src')
 	],
+	externals: {
+		jquery: 'window.$',
+		avalon: 'window.avalon'
+	},
 	output: {
 		path: path.join(__dirname, '/build/'),
 		filename: 'build/[name].[hash:4].js',
@@ -34,7 +38,14 @@ module.exports = {
 		}, {
 			test: /\.json$/,
 			loader: 'json'
-		}]
+		}, {
+            test: /.js$/,
+            enforce: 'post', // post-loader处理
+            loader: 'es3ify-loader',
+			query: {
+                  presets: ['es2015-loose']
+            }
+        }]
 	},
 	resolve: {
 		modulesDirectories: [

@@ -1,10 +1,7 @@
-/**
- * 页面底部
- */
-
-var vm = avalon.define({
-    $id: 'footer',
-    tit: '页面底部'
+var footer = require('./footer.html');
+avalon.component('ms-footer', {
+    template: footer,
+    defaults: {
+        title:'modal'
+    }
 });
-
-module.exports = vm;

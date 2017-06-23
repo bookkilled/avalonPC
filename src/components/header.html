@@ -1,3 +1,21 @@
 <div class="header">
-    <slot name="content">{$ @title $}</slot>
+    <div class="header-warp">
+        <a class="header-logo" href="#!/">
+            <img width="301" height="42" alt="利得金融" src="http://www.leadfund.com.cn/common/images/head/logo1.png" />
+        </a>
+        <ul class="header-menu">
+            <li><a href="#!/index">首页</a></li>
+            <li><a href="#!/404">404页面</a></li>
+            <li><a href="#!/ucenter/index">个人中心</a></li>
+            <li><a href="#!/">我的资产</a></li>
+            <li><a href="#!/">账户管理</a></li>
+        </ul>
+        <div class="header-search">
+            <input type="text" name="search-inp" id="search-inp" class="search-inp" />
+            <span class="search-btn">@</span>
+        </div>
+        <div class="header-user">
+            您好，<span class="user">1312257296</span> <span class="exit">退出</span>
+        </div>
+    </div>
 </div>
